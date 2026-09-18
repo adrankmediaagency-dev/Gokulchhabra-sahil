@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gokul Chabra - Market Education</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,215,0,.14),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(255,153,0,.08),
+            transparent 38%
+        ),
+        #070709;
+
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:15px 10px;
+    overflow-x:hidden;
+}
+
+/* MAIN CARD */
+
+.gc-container{
+    width:100%;
+    max-width:390px;
+    position:relative;
+    padding:27px 20px 21px;
+    border-radius:28px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,28,32,.96),
+            rgba(10,10,13,.98)
+        );
+    border:1px solid rgba(255,215,0,.24);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.78),
+        0 0 35px rgba(255,215,0,.09),
+        inset 0 1px 0 rgba(255,255,255,.05);
+    text-align:center;
+    overflow:hidden;
+}
+
+/* TOP GLOW */
+
+.gc-container:before{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:190px;
+    left:50%;
+    top:-125px;
+    transform:translateX(-50%);
+    background:rgba(255,215,0,.12);
+    filter:blur(55px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+/* LOGO */
+
+.gc-logo-wrap{
+    position:relative;
+    width:112px;
+    height:112px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    padding:4px;
+    background:
+        linear-gradient(
+            135deg,
+            #fff5a8 0%,
+            #ffd700 32%,
+            #ffae00 68%,
+            #fff080 100%
+        );
+    box-shadow:
+        0 0 8px rgba(255,215,0,.55),
+        0 0 28px rgba(255,193,7,.35),
+        0 10px 30px rgba(0,0,0,.55);
+    overflow:hidden;
+    flex-shrink:0;
+}
+
+.gc-logo-inner{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    overflow:hidden;
+    background:#0a0a0c;
+    border:3px solid #0a0a0c;
+    position:relative;
+}
+
+.gc-logo{
+    width:100%;
+    height:100%;
+    display:block;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center;
+    clip-path:circle(50% at 50% 50%);
+    -webkit-clip-path:circle(50% at 50% 50%);
+}
+
+/* BADGE */
+
+.gc-badge{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:7px 13px;
+    margin-bottom:11px;
+    border-radius:50px;
+    background:rgba(255,215,0,.065);
+    border:1px solid rgba(255,215,0,.18);
+    color:#ffe16a;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.25px;
+}
+
+.gc-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ffd700;
+    box-shadow:0 0 10px #ffd700;
+}
+
+/* TITLE */
+
+.gc-title{
+    position:relative;
+    font-size:25px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-.7px;
+    margin-bottom:7px;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 15%,
+            #ffe76b 55%,
+            #ffad00 100%
+        );
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* DESCRIPTION */
+
+.gc-description{
+    max-width:300px;
+    margin:0 auto 17px;
+    color:#a7a7b0;
+    font-size:11.5px;
+    line-height:1.55;
+}
+
+/* CTA */
+
+.gc-btn{
+    width:100%;
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:15px 18px;
+    border-radius:16px;
+    text-decoration:none;
+    color:#080808;
+    background:
+        linear-gradient(
+            135deg,
+            #fff06b 0%,
+            #ffd000 43%,
+            #ff9700 100%
+        );
+    font-size:13.5px;
+    font-weight:800;
+    letter-spacing:.15px;
+    box-shadow:
+        0 10px 28px rgba(255,174,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.65);
+    transition:all .2s ease;
+}
+
+.gc-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 14px 35px rgba(255,174,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.65);
+}
+
+.gc-btn:active{
+    transform:scale(.98);
+}
+
+/* FEATURES */
+
+.gc-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin:16px 0 12px;
+}
+
+.gc-box{
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:9px 7px;
+    border-radius:14px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.015)
+        );
+    border:1px solid rgba(255,255,255,.065);
+    color:#dedee3;
+    font-size:10.5px;
+    line-height:1.35;
+    font-weight:600;
+}
+
+/* DISCLAIMER */
+
+.gc-disclaimer{
+    margin-top:16px;
+    padding:10px;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:10px;
+    color:#a1a1aa;
+    font-size:9.5px;
+    line-height:1.5;
+    text-align:center;
+}
+
+.gc-disclaimer strong{
+    color:#d4d4d8;
+    display:block;
+    margin-bottom:3px;
+}
+
+/* ADVERTISED BY */
+
+.gc-advertised{
+    margin-top:14px;
+    text-align:center;
+    color:#8b8b95;
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.2px;
+}
+
+.gc-advertised a{
+    color:#ffd83d;
+    font-weight:700;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,216,61,.35);
+    padding-bottom:1px;
+    transition:color .2s ease,border-color .2s ease;
+}
+
+.gc-advertised a:hover{
+    color:#fff06b;
+    border-color:rgba(255,240,107,.7);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:360px){
+    body{ padding:10px 8px; }
+    .gc-container{ padding:23px 16px 18px; border-radius:24px; }
+    .gc-logo-wrap{ width:98px; height:98px; margin-bottom:12px; }
+    .gc-title{ font-size:22px; }
+    .gc-description{ font-size:10.5px; margin-bottom:15px; }
+    .gc-btn{ min-height:51px; font-size:12.5px; }
+    .gc-box{ min-height:51px; font-size:10px; }
+}
+
+@media(max-height:650px){
+    .gc-container{ padding-top:20px; padding-bottom:17px; }
+    .gc-logo-wrap{ width:88px; height:88px; margin-bottom:10px; }
+    .gc-title{ font-size:21px; }
+    .gc-description{ margin-bottom:12px; }
+    .gc-features{ margin-top:12px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="gc-container">
+
+    <!-- LOGO -->
+    <div class="gc-logo-wrap">
+        <div class="gc-logo-inner">
+            <img decoding="async"
+                class="gc-logo"
+                src="profile.jpg"
+                alt="Gokul Chabra"
+            >
+        </div>
+    </div>
+
+    <!-- BADGE -->
+    <div class="gc-badge">
+        <span class="gc-dot"></span>
+        EDUCATIONAL COMMUNITY
+    </div>
+
+    <!-- NAME -->
+    <h1 class="gc-title">Gokul Chabra</h1>
+
+    <!-- DESCRIPTION -->
+    <p class="gc-description">
+        Learn and understand stock market fundamentals through structured educational content and case studies.
+    </p>
+
+    <!-- CTA -->
+    
+        href="https://telegram.me/+kZA10bIWllc3MGE1"
+        id="telegram-cta"
+        class="gc-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        JOIN EDUCATIONAL GROUP
+    </a>
+
+    <!-- FEATURES -->
+    <div class="gc-features">
+        <div class="gc-box">
+            📊 Market Education
+        </div>
+        <div class="gc-box">
+            📈 Chart Basics
+        </div>
+        <div class="gc-box">
+            ⚡ Learning Concepts
+        </div>
+        <div class="gc-box">
+            📚 Free Study Material
+        </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="gc-disclaimer">
+        <strong>SEBI Compliance Disclaimer:</strong>
+        This platform is strictly for educational purposes. We are NOT a SEBI-registered advisor and do not provide stock tips, buy/sell recommendations, or guaranteed returns. Trading involves risk.
+    </div>
+
+    <!-- ADVERTISED BY -->
+    <div class="gc-advertised">
+        Advertised By
+        <a href="https://telegram.me/adsrankmedia" target="_blank" rel="noopener noreferrer">AdRank Media</a>
+    </div>
+
+</div>
+
+</body>
+</html>
